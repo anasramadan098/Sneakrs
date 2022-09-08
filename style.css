@@ -1,0 +1,317 @@
+* {
+    padding :0;
+    margin : 0;
+    box-sizing : border-box ; 
+    font-family: sans-serif;
+}
+.container {
+    padding: 0 70px;
+}
+header {
+    height: 100px;
+    position: relative;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    background-color: #eee;
+    height: 1px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header .col-6{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .col-6 ul.links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-left: 40px;
+}
+header .col-6 ul.links li a{
+    color: #777;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    transition: .3s;
+}
+header .col-6 ul.links li a::before {
+    content: '';
+    position: absolute;
+    bottom: -290%;
+    height: 5px;
+    width: 0%;
+    background-color: orange;
+    transition: .3s;
+}
+header .col-6 ul.links li a:hover {
+    color: black;
+}
+header .col-6 ul.links li a:hover::before{
+    width: 100%;
+}
+header .col-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+header .col-4 .profile img{
+    width: 40px;
+}
+/* section */
+.container .product-page {
+    padding: 100px 0 100px 100px;
+}
+.product-page {
+    display: flex;
+    gap: 10%;
+}
+.product-page .images {
+    flex-basis: 45%;
+}
+.product-page .images > img{
+    max-width: 100%;
+    border-radius: 15px;
+    position: relative;
+    top: -20px;
+}
+.product-page .content {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.product-page .content > span {
+    color: orange;
+    font-weight: 550;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+}
+.product-page .content h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.product-page .content p{
+    color: #777;
+    LINE-HEIGHT: 1.5;
+    margin-bottom:15px ;
+}
+.product-page .content .prices{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.product-page .content .discount {
+    display: flex;
+    gap: 20px;
+}
+.product-page .content .discount span:not(span.percentage){
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.product-page .content .discount span.percentage{
+    color: orange;
+    background: #ffa50057;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 5px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.product-page .content .prices  del{
+    color: #777;
+    font-size: 15px ;
+}
+.product-page .content .add {
+    background: orange;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    padding: 10px 30px;
+    transition: .3s;
+}
+.product-page .content .add:hover {
+    background-color: rgba(255, 166, 0, 0.322);
+    box-shadow: 0 6px 13px 0px #ffa5008f;
+}
+.product-page .content .add a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+.form {
+    display: flex;
+gap: 20px;
+}
+.form #num {
+    width: 120px;
+    background: #eee;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    text-align: center;
+}
+.images {
+    display: flex;
+    flex-direction: column;
+
+}
+.other-img {
+    display: flex;
+    gap: 30px;
+}
+.other-img .img img {
+    max-width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.other-img .img img:hover {
+    opacity: 0.5;
+}
+.other-img .img img.active {
+    border: 3px solid orange;
+}
+
+/* Create Card-menu */
+.cart {
+    position: relative;
+}
+.card-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: #fff;
+    border-radius: 2px;
+    right: -100px;
+    z-index: 100;
+    width: 250px;
+    box-shadow: -2px 1px 9px 0px rgb(0 0 0 / 50%);
+    display: none;
+    opacity: 0;
+    transition: .3s;
+}
+.cart:hover .card-menu {
+    display: flex;
+    opacity: 1;
+}
+.card-menu h1 {
+    font-size: 20px;
+    position: relative;
+    padding: 20px;
+}
+.card-menu h1::before {
+    content: '';
+    background-color: #eee;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+}
+.card-menu div.holder{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.card-menu div.holder img{
+    width: 50px;
+    border-radius: 6px;
+}
+.card-menu div.content {
+    color: #777;
+}
+.card-menu div.holder .totalpricee {
+    padding-left: 10px;
+    color: #111;
+    font-weight: bold;
+}
+.card-menu button {
+    border: none;
+    padding: 10px;
+    width: 90%;
+    margin: 5px auto;
+    border-radius: 6px;
+    background: orange;
+    color: #fff;
+    font-weight: bold;
+    transition: .3s;
+}
+.card-menu button:hover {
+    background: rgba(255, 166, 0, 0.589);
+}
+.cart::after {
+    content: attr(data-value);
+    position: absolute;
+    top: -12px;
+    right: -2px;
+    background-color: orange;
+    color: #fff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+/* .... */
+.max-show {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    background: rgb(0 0 0 / 57%);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: none;
+}
+.max-show  .images > img {
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.max-show .close {
+    position: absolute;
+    top: 5%;
+    right: 20%;
+    filter: brightness(4.5);
+}
+.max-show.active {
+    display: flex;
+}
+.deleteicon {
+    border-radius: 0 !important;
+    width: 13px !important;
+    cursor: pointer;
+}
