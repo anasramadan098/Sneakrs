@@ -215,7 +215,7 @@ gap: 20px;
     opacity: 0;
     transition: .3s;
 }
-.cart:hover .card-menu {
+.cart.active .card-menu {
     display: flex;
     opacity: 1;
 }
@@ -267,7 +267,7 @@ gap: 20px;
 .card-menu button:hover {
     background: rgba(255, 166, 0, 0.589);
 }
-.cart::after {
+.cart .numbers{
     content: attr(data-value);
     position: absolute;
     top: -12px;
@@ -314,4 +314,56 @@ gap: 20px;
     border-radius: 0 !important;
     width: 13px !important;
     cursor: pointer;
+}
+
+
+@media (max-width:767px) {
+    header {
+        height: 70px;
+    }
+    header .container {
+        justify-content: center;
+    }
+    .container {
+        padding: 0 0px;
+    }
+    .logo img{
+        width: 200px;
+        margin: 10px;
+    }
+    header .col-6 {
+        flex-direction: column;
+    }
+    header .col-4 {
+        position: absolute;
+        /* flex-direction: column-reverse; */
+        right: 13px;
+        top: 13px;
+    }
+    .container .product-page {
+        padding: 40px 50px 0px;
+        flex-direction: column;
+    }
+    .max-show .images > img {
+        max-width: 300px;
+    }
+    .other-img {
+        gap: 10px;
+        max-width: 400px;
+    }
+    .product-page .content h1 {
+        font-size: 1.7em; 
+    }
+    .product-page .content p {
+        font-size: 14px;
+    }
+    .product-page .content .discount span:not(span.percentage) {
+        font-size: 1.2em;
+    }
+    .product-page .content .prices del {
+        font-size: 14px;
+    }
+    .card-menu {
+        right: -100%;
+    }
 }
